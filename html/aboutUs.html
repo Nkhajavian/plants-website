@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خانه سبز</title>
+
+  <!-- Google Fonts فارسی و انگلیسی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config با رنگ‌های سفارشی -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mybgLight: '#DDEB9D',    // پس‌زمینه لایت
+            mybgDark: '#556B2F',     // پس‌زمینه دارک
+            mycardLight: '#ffffff',  
+            mycardDark: '#065f46',
+            mytextLight: '#862B0D',
+            mytextDark: '#CBA35C',
+            mybutton: '#A6B37D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+  <!-- هدر -->
+  <header class="bg-white shadow-md p-5 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">خانه سبز</h1>
+    <nav class="flex items-center space-x-6">
+      <ul id="menu" class="flex ">
+        <li class="mx-3" ><a href="aboutUs.html" class="hover:text-mybutton " >درباره ما</a></li>
+        
+        <li class="mx-3"><a href="shop.html" class="hover:text-mybutton ">فروشگاه</a></li>
+        <li class="mx-3"><a href="#education" class="hover:text-mybutton">آموزش</a></li>
+        <li class="mx-3"><a href="#contact" class="hover:text-mybutton">تماس</a></li>
+      </ul>
+      
+    </nav>
+    <!-- تغییر زبان -->
+     <div class="flex items-center space-x-3">
+      <button id="langBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">EN</button>
+      <!-- تغییر حالت لایت/دارک -->
+      <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+     </div>
+    </header>
+
+ <!-- سکشن معرفی -->
+  <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
+    <!-- عکس -->
+    <div class="md:w-1/2">
+      <img src="../images/p6.jpg" alt="درباره خانه سبز" class="w-full rounded-2xl shadow-lg">
+    </div>
+    <!-- متن -->
+    <div class="md:w-1/2 text-center md:text-right">
+      <h2 class="text-3xl font-bold mb-6">درباره خانه سبز</h2>
+      <p class="leading-8 text-lg">
+        خانه سبز جایی‌ست که عشق به گیاهان و زندگی سالم را با هم ترکیب می‌کند.  
+        ما باور داریم که حضور گیاهان در خانه نه‌تنها زیبایی و طراوت به فضا می‌بخشد،  
+        بلکه تأثیر مثبتی بر روح و روان دارد. هدف ما این است که نگهداری گیاهان  
+        را برای همه ساده، لذت‌بخش و الهام‌بخش کنیم.
+      </p>
+      <p class="mt-4 leading-8 text-lg">
+        در خانه سبز می‌توانید انواع گیاهان آپارتمانی، ابزارهای مراقبت، و آموزش‌های  
+        کاربردی را پیدا کنید تا خانه‌تان را به محیطی سرسبز و زنده تبدیل کنید 🌿
+      </p>
+    </div>
+
+    
+  </section>
+
+
+
+
+    <!--فوتر-->
+    <footer class="bg-white shadow-inner p-5 text-center">
+    <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- اسکریپت تغییر زبان و لایت/دارک -->
+  <script>
+    const langBtn = document.getElementById('langBtn');
+    const themeBtn = document.getElementById('themeBtn');
+    const menu = document.getElementById('menu');
+    const sliderText = document.getElementById('sliderText');
+    const aboutText = document.getElementById('aboutText');
+    let isEnglish = false;
+    let isDark = false;
+
+    // تغییر زبان
+    langBtn.addEventListener('click', () => {
+      if(!isEnglish){
+        menu.children[0].innerText = 'Home';
+        menu.children[1].innerText = 'About';
+        menu.children[2].innerText = 'Shop';
+        menu.children[3].innerText = 'Contact';
+        sliderText.innerText = 'Beautiful indoor plants for your home';
+        aboutText.innerText = 'At Green Home, we believe in the beauty and calmness plants bring to your living space. Here is your guide to selecting, caring for, and enjoying indoor plants.';
+        langBtn.innerText = 'FA';
+      } else {
+         menu.children[0].innerText = 'درباره ما';
+        menu.children[1].innerText = 'فروشگاه';
+        menu.children[2].innerText = 'آموزش';
+       
+        menu.children[3].innerText = 'تماس';
+        sliderText.innerText = 'گیاهان آپارتمانی زیبا برای خانه شما';
+        aboutText.innerText = 'در خانه سبز، ما به زیبایی و آرامش گیاهان در فضای زندگی ایمان داریم. اینجا راهنمای شما برای انتخاب، نگهداری و لذت بردن از گیاهان آپارتمانی است.';
+        langBtn.innerText = 'EN';
+      }
+      isEnglish = !isEnglish;
+    });
+
+    // تغییر حالت لایت/دارک
+    themeBtn.addEventListener('click', () => {
+      if(!isDark){
+        document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+        document.body.classList.replace('text-mytextLight','text-mytextDark');
+        themeBtn.innerText = '🌞';
+      } else {
+        document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+        document.body.classList.replace('text-mytextDark','text-mytextLight');
+        themeBtn.innerText = '🌙';
+      }
+      isDark = !isDark;
+    });
+  </script>
+
+</body>
+</html>

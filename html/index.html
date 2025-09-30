@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خانه سبز</title>
+
+  <!-- Google Fonts فارسی و انگلیسی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config با رنگ‌های سفارشی -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mybgLight: '#DDEB9D',    // پس‌زمینه لایت
+            mybgDark: '#556B2F',     // پس‌زمینه دارک
+            mycardLight: '#ffffff',  
+            mycardDark: '#065f46',
+            mytextLight: '#862B0D',
+            mytextDark: '#CBA35C',
+            mybutton: '#A6B37D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+  <!-- هدر -->
+  <header class="bg-white shadow-md p-5 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">خانه سبز</h1>
+    <nav class="flex items-center space-x-6">
+      <ul id="menu" class="flex ">
+        <li class="mx-3" ><a href="aboutUs.html" class="hover:text-mybutton " >درباره ما</a></li>
+        
+        <li class="mx-3"><a href="shop.html" class="hover:text-mybutton ">فروشگاه</a></li>
+        <li class="mx-3"><a href="#education" class="hover:text-mybutton">آموزش</a></li>
+        <li class="mx-3"><a href="#contact" class="hover:text-mybutton">تماس</a></li>
+      </ul>
+      
+    </nav>
+    <!-- تغییر زبان -->
+     <div class="flex items-center space-x-3">
+      <button id="langBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">EN</button>
+      <!-- تغییر حالت لایت/دارک -->
+      <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+     </div>
+    </header>
+
+  <!-- اسلایدر -->
+<section id="home" class="mt-10 mb-10 relative w-full">
+  <div class="relative w-full h-[600px] sm:h-[300px] overflow-hidden rounded-xl shadow-lg mx-auto">
+    <img id="sliderImg" src="" class="w-full h-full object-cover object-center" alt="گیاه">
+    <div class="absolute bottom-5 left-5 bg-white bg-opacity-70 p-3 rounded">
+      <h2 class="text-2xl md:text-3xl font-bold" id="sliderText"></h2>
+    </div>
+
+    <!-- دکمه‌های قبلی و بعدی -->
+    <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-mybutton text-white px-3 py-2 rounded text-xl">‹</button>
+    <button id="nextBtn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-mybutton text-white px-3 py-2 rounded text-xl">›</button>
+  </div>
+</section>
+
+<script>
+  const slides = [
+    {
+      img: '../images/4.jpg',
+      text: 'گیاهان آپارتمانی زیبا برای خانه شما'
+    },
+    {
+      img: '../images/2.jpg',
+      text: 'گیاهان مقاوم و سالم'
+    },
+    {
+      img: '../images/3.jpg',
+      text: 'هدیه‌ای سبز برای زندگی شما'
+    }
+  ];
+
+  let current = 0;
+  const sliderImg = document.getElementById('sliderImg');
+  const sliderText1 = document.getElementById('sliderText');
+
+  function showSlide(index){
+    sliderImg.src = slides[index].img;
+    sliderText.innerText = slides[index].text;
+  }
+
+  showSlide(current);
+
+  // خودکار هر 5 ثانیه
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, 5000);
+
+  // دکمه‌ها
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  });
+</script>
+
+
+
+  <!-- معرفی کوتاه -->
+  <section id="about" class="max-w-3xl mx-auto text-center mb-20 px-5">
+    <p id="aboutText">
+      در خانه سبز، ما به زیبایی و آرامش گیاهان در فضای زندگی ایمان داریم. اینجا راهنمای شما برای انتخاب، نگهداری و لذت بردن از گیاهان آپارتمانی است.
+    </p>
+  </section>
+
+  <!-- فوتر -->
+  <footer class="bg-white shadow-inner p-5 text-center">
+    <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- اسکریپت تغییر زبان و لایت/دارک -->
+  <script>
+    const langBtn = document.getElementById('langBtn');
+    const themeBtn = document.getElementById('themeBtn');
+    const menu = document.getElementById('menu');
+    const sliderText = document.getElementById('sliderText');
+    const aboutText = document.getElementById('aboutText');
+    let isEnglish = false;
+    let isDark = false;
+
+    // تغییر زبان
+    langBtn.addEventListener('click', () => {
+      if(!isEnglish){
+        menu.children[0].innerText = 'Home';
+        menu.children[1].innerText = 'About';
+        menu.children[2].innerText = 'Shop';
+        menu.children[3].innerText = 'Contact';
+        sliderText.innerText = 'Beautiful indoor plants for your home';
+        aboutText.innerText = 'At Green Home, we believe in the beauty and calmness plants bring to your living space. Here is your guide to selecting, caring for, and enjoying indoor plants.';
+        langBtn.innerText = 'FA';
+      } else {
+         menu.children[0].innerText = 'درباره ما';
+        menu.children[1].innerText = 'فروشگاه';
+        menu.children[2].innerText = 'آموزش';
+       
+        menu.children[3].innerText = 'تماس';
+        sliderText.innerText = 'گیاهان آپارتمانی زیبا برای خانه شما';
+        aboutText.innerText = 'در خانه سبز، ما به زیبایی و آرامش گیاهان در فضای زندگی ایمان داریم. اینجا راهنمای شما برای انتخاب، نگهداری و لذت بردن از گیاهان آپارتمانی است.';
+        langBtn.innerText = 'EN';
+      }
+      isEnglish = !isEnglish;
+    });
+
+    // تغییر حالت لایت/دارک
+    themeBtn.addEventListener('click', () => {
+      if(!isDark){
+        document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+        document.body.classList.replace('text-mytextLight','text-mytextDark');
+        themeBtn.innerText = '🌞';
+      } else {
+        document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+        document.body.classList.replace('text-mytextDark','text-mytextLight');
+        themeBtn.innerText = '🌙';
+      }
+      isDark = !isDark;
+    });
+  </script>
+
+</body>
+</html>
+

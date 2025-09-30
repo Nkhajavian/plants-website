@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خانه سبز</title>
+
+  <!-- Google Fonts فارسی و انگلیسی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config با رنگ‌های سفارشی -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mybgLight: '#DDEB9D',    // پس‌زمینه لایت
+            mybgDark: '#556B2F',     // پس‌زمینه دارک
+            mycardLight: '#ffffff',  
+            mycardDark: '#065f46',
+            mytextLight: '#862B0D',
+            mytextDark: '#CBA35C',
+            mybutton: '#A6B37D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+  <!-- هدر -->
+  <header class="bg-white shadow-md p-5 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">خانه سبز</h1>
+    <nav class="flex items-center space-x-6">
+      <ul id="menu" class="flex ">
+        <li class="mx-3" ><a href="aboutUs.html" class="hover:text-mybutton " >درباره ما</a></li>
+        
+        <li class="mx-3"><a href="shop.html" class="hover:text-mybutton ">فروشگاه</a></li>
+        <li class="mx-3"><a href="#education" class="hover:text-mybutton">آموزش</a></li>
+        <li class="mx-3"><a href="#contact" class="hover:text-mybutton">تماس</a></li>
+      </ul>
+      
+    </nav>
+    <!-- تغییر زبان -->
+     <div class="flex items-center space-x-3">
+      <button id="langBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">EN</button>
+      <!-- تغییر حالت لایت/دارک -->
+      <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+     </div>
+    </header>
+
+     <!-- عنوان صفحه -->
+  <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">آموزش نگهداری گیاهان آپارتمانی</h2>
+    <p class="text-lg leading-8 text-gray-700 dark:text-gray-300">
+      در این بخش می‌توانید روش‌های نگهداری، آبیاری، تغذیه و تکثیر گیاهان آپارتمانی را یاد بگیرید.  
+      کارت‌های زیر شامل آموزش‌های کوتاه و کاربردی هستند.
+    </p>
+  </section>
+
+  <!-- کارت‌های آموزشی -->
+  <section class="max-w-6xl mx-auto px-6 py-10 grid gap-8 md:grid-cols-3">
+    
+    <!-- کارت نمونه ۱ -->
+    <div class="bg-white dark:bg-green-800 shadow-md rounded-lg overflow-hidden flex flex-col">
+      <div class="h-100 bg-gray-200 dark:bg-green-700 flex items-center justify-center">
+        <!-- عکس رو بعداً اینجا بذار -->
+        <span class="text-gray-400"><img src="../images/w2.jpg"> <span>
+      </div>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-xl font-semibold mb-2">آموزش آبیاری</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+          یاد بگیرید چگونه گیاهان خود را به موقع و درست آبیاری کنید تا همیشه شاداب بمانند.
+        </p>
+        <button class="mt-auto bg-green-600 hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+      </div>
+    </div>
+
+    <!-- کارت نمونه ۲ -->
+    <div class="bg-white dark:bg-green-800 shadow-md rounded-lg overflow-hidden flex flex-col">
+      <div class="h-100 bg-gray-200 dark:bg-green-700 flex items-center justify-center">
+        <span class="text-gray-400"> <img src="../images/l1.jpg"><span>
+      </div>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-xl font-semibold mb-2">نور مناسب</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+          بررسی نیازهای نوری گیاهان مختلف و نحوه قرار دادن آنها در محیط خانه.
+        </p>
+        <button class="mt-auto bg-green-600 hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+      </div>
+    </div>
+
+    <!-- کارت نمونه ۳ -->
+    <div class="bg-white dark:bg-green-800 shadow-md rounded-lg overflow-hidden flex flex-col">
+      <div class="h-100 bg-gray-200 dark:bg-green-700 flex items-center justify-center">
+        <span class="text-gray-400"><img src="../images/e6.jpg"></span>
+      </div>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-xl font-semibold mb-2">کوددهی گیاهان</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+          راهنمای استفاده از کودهای طبیعی و شیمیایی برای رشد سالم گیاهان.
+        </p>
+        <button class="mt-auto bg-green-600 hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+      </div>
+    </div>
+
+    <!-- کارت نمونه ۴ -->
+    <div class="bg-white dark:bg-green-800 shadow-md rounded-lg overflow-hidden flex flex-col">
+      <div class="h-100 bg-gray-200 dark:bg-green-700 flex items-center justify-center">
+        <span class="text-gray-400"> <img src="../images/s1.jpg"> </span>
+      </div>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-xl font-semibold mb-2">گلدان و خاک</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+          انتخاب گلدان مناسب و ترکیب خاک بهینه برای گیاهان آپارتمانی شما.
+        </p>
+        <button class="mt-auto bg-green-600 hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+      </div>
+    </div>
+
+    <!-- کارت نمونه ۵ -->
+    <div class="bg-white dark:bg-green-800 shadow-md rounded-lg overflow-hidden flex flex-col">
+      <div class="h-100 bg-gray-200 dark:bg-green-700 flex items-center justify-center">
+        <span class="text-gray-400"> <img src="../images/e5.jpg"><span>
+      </div>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-xl font-semibold mb-2">تکثیر گیاهان</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+          روش‌های مختلف تکثیر گیاهان و ایجاد گیاهان جدید از گیاهان فعلی.
+        </p>
+        <button class="mt-auto bg-green-600 hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+      </div>
+    </div>
+
+    <!-- کارت نمونه ۶ -->
+    <div class="bg-white dark:bg-green-800 shadow-md rounded-lg overflow-hidden flex flex-col">
+      <div class="h-100 bg-gray-200 dark:bg-green-700 flex items-center justify-center">
+        <span class="text-gray-400"> <img src="../images/e6.jpg"></span>
+      </div>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-xl font-semibold mb-2">مراقبت‌های ویژه</h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 flex-grow">
+          نکات خاص برای نگهداری گیاهان حساس و گیاهانی که به توجه بیشتری نیاز دارند.
+        </p>
+        <button class="mt-auto bg-green-600 hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+      </div>
+    </div>
+
+  </section>
+    <!-- فوتر -->
+  <footer class="bg-white shadow-inner p-5 text-center">
+    <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- اسکریپت تغییر زبان و لایت/دارک -->
+  <script>
+    const langBtn = document.getElementById('langBtn');
+    const themeBtn = document.getElementById('themeBtn');
+    const menu = document.getElementById('menu');
+    const sliderText = document.getElementById('sliderText');
+    const aboutText = document.getElementById('aboutText');
+    let isEnglish = false;
+    let isDark = false;
+
+    // تغییر زبان
+    langBtn.addEventListener('click', () => {
+      if(!isEnglish){
+        menu.children[0].innerText = 'Home';
+        menu.children[1].innerText = 'About';
+        menu.children[2].innerText = 'Shop';
+        menu.children[3].innerText = 'Contact';
+        sliderText.innerText = 'Beautiful indoor plants for your home';
+        aboutText.innerText = 'At Green Home, we believe in the beauty and calmness plants bring to your living space. Here is your guide to selecting, caring for, and enjoying indoor plants.';
+        langBtn.innerText = 'FA';
+      } else {
+         menu.children[0].innerText = 'درباره ما';
+        menu.children[1].innerText = 'فروشگاه';
+        menu.children[2].innerText = 'آموزش';
+       
+        menu.children[3].innerText = 'تماس';
+        sliderText.innerText = 'گیاهان آپارتمانی زیبا برای خانه شما';
+        aboutText.innerText = 'در خانه سبز، ما به زیبایی و آرامش گیاهان در فضای زندگی ایمان داریم. اینجا راهنمای شما برای انتخاب، نگهداری و لذت بردن از گیاهان آپارتمانی است.';
+        langBtn.innerText = 'EN';
+      }
+      isEnglish = !isEnglish;
+    });
+
+    // تغییر حالت لایت/دارک
+    themeBtn.addEventListener('click', () => {
+      if(!isDark){
+        document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+        document.body.classList.replace('text-mytextLight','text-mytextDark');
+        themeBtn.innerText = '🌞';
+      } else {
+        document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+        document.body.classList.replace('text-mytextDark','text-mytextLight');
+        themeBtn.innerText = '🌙';
+      }
+      isDark = !isDark;
+    });
+  </script>
+
+</body>
+</html>
+
