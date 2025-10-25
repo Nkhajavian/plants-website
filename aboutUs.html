@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درباره خانه سبز</title>
+<meta name="description" content="آموزش نگهداری، آبیاری، نور مناسب و کوددهی گیاهان آپارتمانی">
+
+<!-- فونت -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mybgLight: '#DDEB9D',
+          mybgDark: '#556B2F',
+          mycardLight: '#ffffff',
+          mycardDark: '#065f46',
+          mytextLight: '#862B0D',
+          mytextDark: '#CBA35C',
+          mybutton: '#A6B37D'
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+body { font-family: 'Vazirmatn', sans-serif; }
+</style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+<!-- هدر -->
+<header id="header" class="bg-white shadow-md p-5 transition-colors duration-500">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 id="logo" class="text-2xl font-bold"><a href="index.html">خانه سبز</a></h1>
+
+    <!-- منوی دسکتاپ -->
+    <nav class="hidden md:flex items-center">
+      <ul id="menu" class="flex flex-row-reverse gap-6">
+        <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+        <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+        <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+        <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a id="cartBtn" href="cart.html" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🛒 سبد خرید</a>
+      <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+      <button id="mobileMenuBtn" class="md:hidden px-3 py-1 border rounded hover:bg-mybutton hover:text-white">☰</button>
+    </div>
+  </div>
+
+  <!-- منوی موبایل -->
+  <nav id="mobileMenu" class="hidden md:hidden bg-white mt-2 shadow-md rounded-lg p-4">
+    <ul class="flex flex-col gap-4 text-right">
+      <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+      <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+      <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+      <li><a href="cart.html" class="hover:text-mybutton">سبد خرید</a></li>
+    </ul>
+  </nav>
+</header>
+  <!-- معرفی خانه سبز -->
+  <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10 transition-colors duration-500">
+    <div class="md:w-1/2">
+      <img src="../images/p6.jpg" alt="درباره خانه سبز" class="w-full rounded-2xl shadow-lg">
+    </div>
+    <div class="md:w-1/2 text-center md:text-right">
+      <h2 class="text-3xl font-bold mb-6">درباره خانه سبز</h2>
+      <p class="leading-8 text-lg">
+        خانه سبز جایی‌ست که عشق به گیاهان و زندگی سالم را با هم ترکیب می‌کند.  
+        ما باور داریم که حضور گیاهان در خانه نه‌تنها زیبایی و طراوت به فضا می‌بخشد،  
+        بلکه تأثیر مثبتی بر روح و روان دارد. هدف ما این است که نگهداری گیاهان  
+        را برای همه ساده، لذت‌بخش و الهام‌بخش کنیم.
+      </p>
+      <p class="mt-4 leading-8 text-lg">
+        در خانه سبز می‌توانید انواع گیاهان آپارتمانی، ابزارهای مراقبت، و آموزش‌های  
+        کاربردی را پیدا کنید تا خانه‌تان را به محیطی سرسبز و زنده تبدیل کنید 🌿
+      </p>
+    </div>
+  </section>
+
+ <!-- فوتر -->
+<footer id="footer" class="bg-mycardLight shadow-inner p-5 text-center transition-colors duration-500">
+  <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+</footer>
+
+<!-- اسکریپت دارک/لایت و منو موبایل -->
+<script>
+const themeBtn = document.getElementById('themeBtn');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+
+let isDark = false;
+
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  if(isDark){
+    document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+    document.body.classList.replace('text-mytextLight','text-mytextDark');
+    header.classList.replace('bg-white','bg-mybgDark');
+    footer.classList.replace('bg-mycardLight','bg-mybgDark');
+    themeBtn.innerText = '🌞';
+  } else {
+    document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+    document.body.classList.replace('text-mytextDark','text-mytextLight');
+    header.classList.replace('bg-mybgDark','bg-white');
+    footer.classList.replace('bg-mybgDark','bg-mycardLight');
+    themeBtn.innerText = '🌙';
+  }
+});
+
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>

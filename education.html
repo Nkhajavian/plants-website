@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آموزش نگهداری گیاهان آپارتمانی</title>
+<meta name="description" content="آموزش نگهداری، آبیاری، نور مناسب و کوددهی گیاهان آپارتمانی">
+
+<!-- فونت -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mybgLight: '#DDEB9D',
+          mybgDark: '#556B2F',
+          mycardLight: '#ffffff',
+          mycardDark: '#065f46',
+          mytextLight: '#862B0D',
+          mytextDark: '#CBA35C',
+          mybutton: '#A6B37D'
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+body { font-family: 'Vazirmatn', sans-serif; }
+</style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+<!-- هدر -->
+<header id="header" class="bg-white shadow-md p-5 transition-colors duration-500">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 id="logo" class="text-2xl font-bold"><a href="index.html">خانه سبز</a></h1>
+
+    <!-- منوی دسکتاپ -->
+    <nav class="hidden md:flex items-center">
+      <ul id="menu" class="flex flex-row-reverse gap-6">
+        <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+        <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+        <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+        <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a id="cartBtn" href="cart.html" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🛒 سبد خرید</a>
+      <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+      <button id="mobileMenuBtn" class="md:hidden px-3 py-1 border rounded hover:bg-mybutton hover:text-white">☰</button>
+    </div>
+  </div>
+
+  <!-- منوی موبایل -->
+  <nav id="mobileMenu" class="hidden md:hidden bg-white mt-2 shadow-md rounded-lg p-4">
+    <ul class="flex flex-col gap-4 text-right">
+      <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+      <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+      <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+      <li><a href="cart.html" class="hover:text-mybutton">سبد خرید</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- عنوان صفحه -->
+<section class="max-w-6xl mx-auto px-6 py-16 text-center">
+  <h2 id="pageTitle" class="text-3xl font-bold mb-4">آموزش نگهداری گیاهان آپارتمانی</h2>
+  <p id="pageDesc" class="text-lg leading-8 text-gray-700 transition-colors duration-500">
+    در این بخش می‌توانید روش‌های نگهداری، آبیاری، تغذیه و تکثیر گیاهان آپارتمانی را یاد بگیرید.  
+    کارت‌های زیر شامل آموزش‌های کوتاه و کاربردی هستند.
+  </p>
+</section>
+
+<!-- کارت‌های آموزشی -->
+<section class="max-w-6xl mx-auto px-4 py-10 grid gap-6 md:grid-cols-3">
+  <!-- کارت‌ها مشابه قبل بدون تغییر -->
+  <div class="bg-mycardLight dark:bg-mycardDark shadow-md rounded-lg overflow-hidden flex flex-col transition-colors duration-500">
+    <img src="../images/w2.jpg" alt="آموزش آبیاری" class="h-40 sm:h-48 w-full object-cover">
+    <div class="p-3 sm:p-4 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2">آموزش آبیاری</h3>
+      <p class="text-mytextLight dark:text-mytextDark mb-3 flex-grow">
+        یاد بگیرید چگونه گیاهان خود را به موقع و درست آبیاری کنید تا همیشه شاداب بمانند.
+      </p>
+      <button class="mt-auto bg-mybutton hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+    </div>
+  </div>
+  <!-- کارت ۲ -->
+  <div class="bg-mycardLight dark:bg-mycardDark shadow-md rounded-lg overflow-hidden flex flex-col transition-colors duration-500">
+    <img src="../images/l1.jpg" alt="نور مناسب" class="h-40 sm:h-48 w-full object-cover">
+    <div class="p-3 sm:p-4 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2">نور مناسب</h3>
+      <p class="text-mytextLight dark:text-mytextDark mb-3 flex-grow">
+        بررسی نیازهای نوری گیاهان مختلف و نحوه قرار دادن آنها در محیط خانه.
+      </p>
+      <button class="mt-auto bg-mybutton hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+    </div>
+  </div>
+  <!-- کارت ۳ -->
+  <div class="bg-mycardLight dark:bg-mycardDark shadow-md rounded-lg overflow-hidden flex flex-col transition-colors duration-500">
+    <img src="../images/e6.jpg" alt="کوددهی گیاهان" class="h-40 sm:h-48 w-full object-cover">
+    <div class="p-3 sm:p-4 flex flex-col flex-grow">
+      <h3 class="text-xl font-semibold mb-2">کوددهی گیاهان</h3>
+      <p class="text-mytextLight dark:text-mytextDark mb-3 flex-grow">
+        راهنمای استفاده از کودهای طبیعی و شیمیایی برای رشد سالم گیاهان.
+      </p>
+      <button class="mt-auto bg-mybutton hover:bg-green-700 text-white py-2 rounded transition">بیشتر بخوانید</button>
+    </div>
+  </div>
+</section>
+
+<!-- فوتر -->
+<footer id="footer" class="bg-mycardLight shadow-inner p-5 text-center transition-colors duration-500">
+  <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+</footer>
+
+<!-- اسکریپت دارک/لایت و منو موبایل -->
+<script>
+const themeBtn = document.getElementById('themeBtn');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+
+let isDark = false;
+
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  if(isDark){
+    document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+    document.body.classList.replace('text-mytextLight','text-mytextDark');
+    header.classList.replace('bg-white','bg-mybgDark');
+    footer.classList.replace('bg-mycardLight','bg-mybgDark');
+    themeBtn.innerText = '🌞';
+  } else {
+    document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+    document.body.classList.replace('text-mytextDark','text-mytextLight');
+    header.classList.replace('bg-mybgDark','bg-white');
+    footer.classList.replace('bg-mybgDark','bg-mycardLight');
+    themeBtn.innerText = '🌙';
+  }
+});
+
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>

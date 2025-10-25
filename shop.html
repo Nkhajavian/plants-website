@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه خانه سبز</title>
+
+  <!-- فونت فارسی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mybgLight: '#DDEB9D',
+            mybgDark: '#556B2F',
+            mycardLight: '#ffffff',
+            mycardDark: '#065f46',
+            mytextLight: '#862B0D',
+            mytextDark: '#CBA35C',
+            mybutton: '#A6B37D'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Vazirmatn', sans-serif; }
+  </style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+  <!-- هدر -->
+  <header id="header" class="bg-white shadow-md p-5 transition-colors duration-500">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold"><a href="index.html">خانه سبز</a></h1>
+
+      <!-- منوی دسکتاپ -->
+      <nav class="hidden md:flex items-center">
+        <ul class="flex flex-row-reverse gap-6">
+          <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+          <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+          <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+          <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+        </ul>
+      </nav>
+
+      <!-- سبد خرید و دارک/لایت -->
+      <div class="flex items-center gap-3">
+        <button id="cartBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🛒 سبد خرید</button>
+        <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+        <button id="mobileMenuBtn" class="md:hidden px-3 py-1 border rounded hover:bg-mybutton hover:text-white">☰</button>
+      </div>
+    </div>
+
+    <!-- منوی موبایل -->
+    <nav id="mobileMenu" class="hidden md:hidden bg-white mt-2 shadow-md rounded-lg p-4">
+      <ul class="flex flex-col gap-4 text-right">
+        <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+        <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+        <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+        <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- معرفی فروشگاه -->
+  <section class="my-10 text-center max-w-4xl mx-auto px-5 transition-colors duration-500">
+    <h2 class="text-3xl font-bold mb-4">فروشگاه خانه سبز</h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300">
+      در اینجا می‌توانید بهترین گیاهان آپارتمانی را پیدا کنید و به خانه خود رنگ و زندگی ببخشید.
+    </p>
+  </section>
+
+  <!-- گرید محصولات -->
+  <section id="shop" class="px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-10">
+    <!-- محصول 1 -->
+    <div class="bg-mycardLight dark:bg-mycardDark rounded shadow p-3 transition-colors duration-500 flex flex-col">
+      <img src="../images/p1.png" alt="سانسوریا" class="w-full h-64 object-cover rounded mb-3">
+      <h3 class="mt-2 font-bold">سانسوریا</h3>
+      <p class="text-mybutton mb-3">توضیح کوتاه درباره گیاه 1</p>
+      <button class="mt-auto bg-mybutton text-white py-2 rounded hover:bg-green-700 transition">خرید</button>
+    </div>
+    <!-- محصول 2 -->
+    <div class="bg-mycardLight dark:bg-mycardDark rounded shadow p-3 transition-colors duration-500 flex flex-col">
+      <img src="../images/p2.jpg" alt="سانسوریا شمشیری" class="w-full h-64 object-cover rounded mb-3">
+      <h3 class="mt-2 font-bold">سانسوریا شمشیری</h3>
+      <p class="text-mybutton mb-3">توضیح کوتاه درباره گیاه 2</p>
+      <button class="mt-auto bg-mybutton text-white py-2 rounded hover:bg-green-700 transition">خرید</button>
+    </div>
+    <!-- محصول 3 -->
+    <div class="bg-mycardLight dark:bg-mycardDark rounded shadow p-3 transition-colors duration-500 flex flex-col">
+      <img src="../images/p3.jpg" alt="فیکوس الاستیکا سبز" class="w-full h-64 object-cover rounded mb-3">
+      <h3 class="mt-2 font-bold">فیکوس الاستیکا سبز</h3>
+      <p class="text-mybutton mb-3">توضیح کوتاه درباره گیاه 3</p>
+      <button class="mt-auto bg-mybutton text-white py-2 rounded hover:bg-green-700 transition">خرید</button>
+    </div>
+    <!-- محصول 4 -->
+    <div class="bg-mycardLight dark:bg-mycardDark rounded shadow p-3 transition-colors duration-500 flex flex-col">
+      <img src="../images/p7.jpg" alt="کالادیوم" class="w-full h-64 object-cover rounded mb-3">
+      <h3 class="mt-2 font-bold">کالادیوم</h3>
+      <p class="text-mybutton mb-3">توضیح کوتاه درباره گیاه 4</p>
+      <button class="mt-auto bg-mybutton text-white py-2 rounded hover:bg-green-700 transition">خرید</button>
+    </div>
+    <!-- محصول 5 -->
+    <div class="bg-mycardLight dark:bg-mycardDark rounded shadow p-3 transition-colors duration-500 flex flex-col">
+      <img src="../images/p4.jpg" alt="پوتوس و اسکاندیس" class="w-full h-64 object-cover rounded mb-3">
+      <h3 class="mt-2 font-bold">پوتوس و اسکاندیس</h3>
+      <p class="text-mybutton mb-3">توضیح کوتاه درباره گیاه 5</p>
+      <button class="mt-auto bg-mybutton text-white py-2 rounded hover:bg-green-700 transition">خرید</button>
+    </div>
+    <!-- محصول 6 -->
+    <div class="bg-mycardLight dark:bg-mycardDark rounded shadow p-3 transition-colors duration-500 flex flex-col">
+      <img src="../images/p5.jpg" alt="دیفن باخیا" class="w-full h-64 object-cover rounded mb-3">
+      <h3 class="mt-2 font-bold">دیفن باخیا</h3>
+      <p class="text-mybutton mb-3">توضیح کوتاه درباره گیاه 6</p>
+      <button class="mt-auto bg-mybutton text-white py-2 rounded hover:bg-green-700 transition">خرید</button>
+    </div>
+  </section>
+
+  <!-- فوتر -->
+  <footer id="footer" class="bg-mycardLight dark:bg-mycardDark shadow-inner p-5 text-center transition-colors duration-500">
+    <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- اسکریپت دارک/لایت و منوی موبایل -->
+  <script>
+    const themeBtn = document.getElementById('themeBtn');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let isDark = false;
+
+    themeBtn.addEventListener('click', () => {
+      if(!isDark){
+        document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+        document.body.classList.replace('text-mytextLight','text-mytextDark');
+        document.getElementById('header').classList.replace('bg-white','bg-mybgDark');
+        document.getElementById('footer').classList.replace('bg-mycardLight','bg-mycardDark');
+        themeBtn.innerText = '🌞';
+      } else {
+        document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+        document.body.classList.replace('text-mytextDark','text-mytextLight');
+        document.getElementById('header').classList.replace('bg-mybgDark','bg-white');
+        document.getElementById('footer').classList.replace('bg-mycardDark','bg-mycardLight');
+        themeBtn.innerText = '🌙';
+      }
+      isDark = !isDark;
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

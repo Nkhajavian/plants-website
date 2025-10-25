@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آموزش نگهداری گیاهان آپارتمانی</title>
+<meta name="description" content="آموزش نگهداری، آبیاری، نور مناسب و کوددهی گیاهان آپارتمانی">
+
+<!-- فونت -->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mybgLight: '#DDEB9D',
+          mybgDark: '#556B2F',
+          mycardLight: '#ffffff',
+          mycardDark: '#065f46',
+          mytextLight: '#862B0D',
+          mytextDark: '#CBA35C',
+          mybutton: '#A6B37D'
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+body { font-family: 'Vazirmatn', sans-serif; }
+</style>
+</head>
+<body class="bg-mybgLight text-mytextLight transition-colors duration-500">
+
+<!-- هدر -->
+<header id="header" class="bg-white shadow-md p-5 transition-colors duration-500">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 id="logo" class="text-2xl font-bold"><a href="index.html">خانه سبز</a></h1>
+
+    <!-- منوی دسکتاپ -->
+    <nav class="hidden md:flex items-center">
+      <ul id="menu" class="flex flex-row-reverse gap-6">
+        <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+        <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+        <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+        <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a id="cartBtn" href="cart.html" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🛒 سبد خرید</a>
+      <button id="themeBtn" class="px-3 py-1 border rounded hover:bg-mybutton hover:text-white">🌙</button>
+      <button id="mobileMenuBtn" class="md:hidden px-3 py-1 border rounded hover:bg-mybutton hover:text-white">☰</button>
+    </div>
+  </div>
+
+  <!-- منوی موبایل -->
+  <nav id="mobileMenu" class="hidden md:hidden bg-white mt-2 shadow-md rounded-lg p-4">
+    <ul class="flex flex-col gap-4 text-right">
+      <li><a href="aboutUs.html" class="hover:text-mybutton">درباره ما</a></li>
+      <li><a href="shop.html" class="hover:text-mybutton">فروشگاه</a></li>
+      <li><a href="education.html" class="hover:text-mybutton">آموزش</a></li>
+      <li><a href="contact.html" class="hover:text-mybutton">تماس</a></li>
+      <li><a href="cart.html" class="hover:text-mybutton">سبد خرید</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- بخش تماس -->
+<section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
+  <!-- فرم تماس -->
+  <div>
+    <h2 id="formTitle" class="text-3xl font-bold mb-6">تماس با ما</h2>
+    <p id="formDesc" class="mb-6 text-lg leading-8">
+      اگر سوالی دارید یا می‌خواهید با ما در ارتباط باشید، فرم زیر را پر کنید.  
+      تیم پشتیبانی ما در اسرع وقت با شما تماس خواهد گرفت.
+    </p>
+
+    <form class="space-y-5">
+      <div>
+        <label id="nameLabel" class="block mb-2 text-sm font-medium">نام شما</label>
+        <input id="nameInput" type="text" placeholder="نام خود را وارد کنید"
+          class="w-full p-3 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-green-800 dark:border-green-700" />
+      </div>
+
+      <div>
+        <label id="emailLabel" class="block mb-2 text-sm font-medium">ایمیل</label>
+        <input id="emailInput" type="email" placeholder="ایمیل خود را وارد کنید"
+          class="w-full p-3 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-green-800 dark:border-green-700" />
+      </div>
+
+      <div>
+        <label id="msgLabel" class="block mb-2 text-sm font-medium">پیام شما</label>
+        <textarea id="msgInput" rows="5" placeholder="پیام خود را بنویسید"
+          class="w-full p-3 rounded-md border focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-green-800 dark:border-green-700"></textarea>
+      </div>
+
+      <button id="submitBtn" type="submit"
+        class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md font-semibold transition">
+        ارسال پیام
+      </button>
+    </form>
+  </div>
+
+  <!-- اطلاعات تماس -->
+  <div class="flex flex-col justify-center space-y-6">
+    <div>
+      <h3 class="text-xl font-semibold mb-2">📍 آدرس</h3>
+      <p class="text-lg" id="addressText">تهران، خیابان سبز، پلاک ۱۲</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold mb-2">📞 تلفن</h3>
+      <p class="text-lg" id="phoneText">021-12345678</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold mb-2">✉️ ایمیل</h3>
+      <p class="text-lg" id="emailText">info@khanehsabz.com</p>
+    </div>
+    <div>
+      <h3 class="text-xl font-semibold mb-2">⏰ ساعت کاری</h3>
+      <p class="text-lg" id="workText">شنبه تا پنجشنبه: ۹ صبح تا ۶ عصر</p>
+    </div>
+  </div>
+</section>
+
+<!-- فوتر -->
+<!-- فوتر -->
+<footer id="footer" class="bg-mycardLight shadow-inner p-5 text-center transition-colors duration-500">
+  <p>© 2025 خانه سبز. همه حقوق محفوظ است.</p>
+</footer>
+
+<!-- اسکریپت دارک/لایت و منو موبایل -->
+<script>
+const themeBtn = document.getElementById('themeBtn');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const header = document.getElementById('header');
+const footer = document.getElementById('footer');
+
+let isDark = false;
+
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  if(isDark){
+    document.body.classList.replace('bg-mybgLight','bg-mybgDark');
+    document.body.classList.replace('text-mytextLight','text-mytextDark');
+    header.classList.replace('bg-white','bg-mybgDark');
+    footer.classList.replace('bg-mycardLight','bg-mybgDark');
+    themeBtn.innerText = '🌞';
+  } else {
+    document.body.classList.replace('bg-mybgDark','bg-mybgLight');
+    document.body.classList.replace('text-mytextDark','text-mytextLight');
+    header.classList.replace('bg-mybgDark','bg-white');
+    footer.classList.replace('bg-mybgDark','bg-mycardLight');
+    themeBtn.innerText = '🌙';
+  }
+});
+
+mobileMenuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>
